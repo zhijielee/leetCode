@@ -1,3 +1,7 @@
 algorithms/java/.idea
 algorithms/java/out
-
+.DS_Store
+algorithms/.DS_Store
+algorithms/Java/.DS_Store
+algorithms/Java/algorithms.iml
+algorithms/Java/src/.DS_Store
