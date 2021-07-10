@@ -1,7 +1,8 @@
-algorithms/java/.idea
-algorithms/java/out
+algorithms/leetcode-java/.idea
+algorithms/leetcode-java/out
+algorithem/leetcode-java/src/Main.java
+algorithms/leetcode-Swift/leetcode-Swift/main.swift
 .DS_Store
-algorithms/.DS_Store
-algorithms/Java/.DS_Store
-algorithms/Java/algorithms.iml
-algorithms/Java/src/.DS_Store
+*.DS_Store
+*.iml
+*.xcodeproj/
