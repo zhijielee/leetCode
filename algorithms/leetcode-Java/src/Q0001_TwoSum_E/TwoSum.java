@@ -1,4 +1,4 @@
-package Q0001_TwoSum_Easy;
+package Q0001_TwoSum_E;
 
 import java.util.HashMap;
 
@@ -26,16 +26,17 @@ public class TwoSum {
      * @param target
      * @return
      */
-    public int [] twoSum(int [] nums, int target) {
-        HashMap<Integer, Integer> hashMap = new HashMap<>();
-        for(int i = 0; i < nums.length; i++) {
-            // 先判断元素再加入map，防止选择重复元素
-            if(hashMap.containsKey(target - nums[i])) {
-                return new int[] {hashMap.get(target - nums[i]), i};
-            } else {
-                hashMap.put(nums[i], i);
+    public int [] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> numMap = new HashMap<>();
+        numMap.put(nums[0], 0);
+        for(int i = 1; i < nums.length; i++) {
+            if (numMap.containsKey(target - nums[i])) {
+                return new int[]{numMap.get(target - nums[i]) , i};
             }
+
+            numMap.put(nums[i], i);
         }
+
         throw new IllegalArgumentException("No two sum solution");
     }
 }

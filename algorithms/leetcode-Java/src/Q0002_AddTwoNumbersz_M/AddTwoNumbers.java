@@ -1,6 +1,4 @@
-package Q0002_AddTwoNumbersz_Medium;
-
-import java.util.List;
+package Q0002_AddTwoNumbersz_M;
 
 /**
  * @author Die antwort
@@ -21,27 +19,31 @@ import java.util.List;
 public class AddTwoNumbers {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode listSum = new ListNode(0);
+        ListNode listSum;
         ListNode listInter = new ListNode(0);
-        int index = (l1.val + l2.val) / 10;
-        listInter.val =  (l1.val + l2.val) % 10;
+
+        listInter.val = (l1.val + l2.val) % 10;
+        int addCarry = (l1.val + l2.val) / 10;
         listSum = listInter;
-        while (l1.next != null || l2.next != null) {
-            if(l1.next == null) {
-                l1.next = new ListNode(0);
+
+        while (l1.next != null || l2.next != null || addCarry != 0) {
+            int sum = 0;
+            if (l1.next != null) {
+                sum += l1.next.val;
+                l1 = l1.next;
             }
-            if(l2.next == null) {
-                l2.next = new ListNode(0);
+
+            if (l2.next != null) {
+                sum += l2.next.val;
+                l2 = l2.next;
             }
-            listInter.next = new ListNode((l1.next.val + l2.next.val + index) % 10);
-            index = (l1.next.val + l2.next.val + index) / 10;
-            l1 = l1.next;
-            l2 = l2.next;
+
+            listInter.next = new ListNode((sum+ addCarry) % 10);
+            addCarry = (sum+ addCarry) / 10;
+
             listInter = listInter.next;
         }
-        if(index == 1) {
-            listInter.next = new ListNode(index);
-        }
+
         return listSum;
     }
 }
